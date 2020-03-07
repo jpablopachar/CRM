@@ -1,0 +1,61 @@
+{%  extends 'cuenta/main.html' %}
+{% block Content %}
+{%  include 'cuenta/estado.html' %}
+<br>
+<div class="row">
+	<div class="col-md-5">
+		<h5>CLIENTES:</h5>
+		<hr>
+		<div class="card card-body">
+      <a class="btn btn-primary  btn-sm btn-block" href="">Registrar cliente</a>
+			<table class="table table-sm">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Cliente</th>
+            <th>Teléfono</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for cliente in clientes %}
+          <tr>
+            <td><a href="{% url 'cuenta:cliente' cliente.id %}" class="btn btn-sm btn-info">Ver</a></td>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.telefono }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+		</div>
+	</div>
+	<div class="col-md-7">
+		<h5>ULTIMAS 5 ORDENES</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'cuenta:registrarOrden' %}">Crear Orden</a>
+			<table class="table table-sm">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for orden in ordenes %}
+          <tr>
+            <td>{{ orden.producto }}</td>
+            <td>{{ orden.fechaCreacion }}</td>
+            <td>{{ orden.estado }}</td>
+            <td><a href="{% url 'cuenta:actualizarOrden' orden.id %}" class="btn btn-sm btn-info">Editar</a></td>
+            <td><a href="{% url 'cuenta:eliminarOrden' orden.id %}" class="btn btn-sm btn-danger">Eliminar</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}

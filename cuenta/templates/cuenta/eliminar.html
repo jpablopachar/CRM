@@ -1,0 +1,17 @@
+{% extends 'cuenta/main.html' %}
+{% load static %}
+{% block Content %}
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card card-body">
+      <p>¿Desea eliminar "{{ orden }}"?</p>
+      <form action="" method="post">
+        {% csrf_token %}
+        <a href="{% url 'cuenta:innicio' %}" class="btn btn-warning">Cancelar</a>
+        <input type="submit" class="btn btn-danger" name="Confirmar">
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

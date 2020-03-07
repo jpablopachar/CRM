@@ -1,0 +1,7 @@
+<h3>Reiniciar Contraseña</h3>
+<p>¿Olvidaste tu contraseña? Ingrese su dirección de correo electrónico a continuación y le enviaremos instrucciones por correo electrónico para configurar una nueva.</p>
+<form method="post">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" name="Enviar contraseña">
+</form>

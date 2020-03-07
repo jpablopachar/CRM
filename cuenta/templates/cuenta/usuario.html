@@ -1,0 +1,30 @@
+{% extends 'cuenta/main.html' %}
+{% block Content %}
+{% include 'cuenta/estado.html' %}
+<div class="row">
+  <div class="col-md">
+    <div class="card card-body">
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Nota</th>
+            <th>Fecha de orden</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for orden in ordenes %}
+          <tr>
+            <td>{{ orden.producto }}</td>
+            <td>{{ orden.nota }}</td>
+            <td>{{ orden.fechaCreacion }}</td>
+            <td>{{ orden.estado }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

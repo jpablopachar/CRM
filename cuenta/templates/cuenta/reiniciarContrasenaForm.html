@@ -1,0 +1,7 @@
+<h3>Ingerse una nueva contraseña</h3>
+<p>Ingrese su nueva contraseña dos veces para que podamos verificar que la ingresó correctamente.</p>
+<form method="post">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" name="Actualizar contraseña">
+</form>

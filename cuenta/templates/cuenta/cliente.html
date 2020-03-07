@@ -1,0 +1,80 @@
+{%  extends 'cuenta/main.html' %}
+{% block Content %}
+<br>
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Cliente:</h5>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="">Actualizar cliente</a>
+			<a class="btn btn-outline-danger  btn-sm btn-block" href="">Eliminar cliente</a>
+		</div>
+	</div>
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Información de contacto</h5>
+			<hr>
+			<p>Correo: {{ cliente.correo }}</p>
+			<p>Teléfono: {{ cliente.telefono }}</p>
+		</div>
+	</div>
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Total de Ordenes</h5>
+			<hr>
+			<h1 style="text-align: center;padding: 10px">{{ totalOrdenes }}</h1>
+		</div>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+			<form method="get">
+        <button class="btn btn-primary" type="submit">Buscar</button>
+		  </form>
+		</div>
+	</div>
+</div>
+<br>
+<div class="row">
+  <div class="col">
+    <div class="card card-body">
+      <form method="get">
+        {{ filtro.form }}
+        <button class="btn btn-primary" type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Categoría</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for orden in ordenes %}
+          <tr>
+            <td>{{ orden.producto }}</td>
+            <td>{{ orden.producto.categoria }}</td>
+            <td>{{ orden.fechaCreacion }}</td>
+            <td>{{ orden.fechaCreacion }}</td>
+            <td><a href="{% url 'cuenta:actualizarOrden' orden.id %}" class="btn btn-sm btn-info">Editar</a></td>
+            <td><a href="{% url 'cuenta:eliminarOrden' orden.id %}" class="btn btn-sm btn-danger">Eliminar</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}
