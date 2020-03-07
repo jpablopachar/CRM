@@ -9,20 +9,20 @@
       <Owner>postgres</Owner>
       <IntrospectionStateNumber>846</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|16854|16856|1
-sequence|table|16862|16864|1
-sequence|table|16872|16874|1
-sequence|table|16880|16882|1
-sequence|table|16940|16942|1
+      <Relations>sequence|table|17023|17025|1
 sequence|table|16973|16975|1
 sequence|table|16984|16986|1
 sequence|table|16992|16994|1
 sequence|table|17015|17017|1
-sequence|table|17023|17025|1
-sequence|table|16815|16817|1
+sequence|table|16940|16942|1
+sequence|table|16854|16856|1
+sequence|table|16862|16864|1
+sequence|table|16872|16874|1
+sequence|table|16880|16882|1
 sequence|table|16826|16828|1
 sequence|table|16836|16838|1
 sequence|table|16844|16846|1
+sequence|table|16815|16817|1
 </Relations>
     </database>
     <database id="3" parent="1" name="DBSistemaVentasFacturacion">
